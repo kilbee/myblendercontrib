@@ -1365,7 +1365,8 @@ class MotionTrailOperator(bpy.types.Operator):
 
         wm = context.window_manager
         keyconfig = wm.keyconfigs.active
-        select = getattr(keyconfig.preferences, "select_mouse", "LEFT")
+        #select = getattr(keyconfig.preferences, "select_mouse", "LEFT")
+        select = "LEFT" # quick dirty fix - assumes left click select
 
         if (not context.active_object or
                 context.active_object.mode not in ('OBJECT', 'POSE')):
@@ -1533,7 +1534,8 @@ class MotionTrailOperator(bpy.types.Operator):
         # get clashing keymap items
         wm = context.window_manager
         keyconfig = wm.keyconfigs.active
-        select = getattr(keyconfig.preferences, "select_mouse", "LEFT")
+        #select = getattr(keyconfig.preferences, "select_mouse", "LEFT")
+        select = "LEFT" # quick dirty fix - assumes left click select
         kms = [
             bpy.context.window_manager.keyconfigs.active.keymaps['3D View'],
             bpy.context.window_manager.keyconfigs.active.keymaps['Object Mode']
